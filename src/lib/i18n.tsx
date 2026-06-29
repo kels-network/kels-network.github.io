@@ -55,7 +55,7 @@ const en = {
     year: "2026 Board Members",
     close: "Close",
   },
-} as const;
+};
 
 const ko: Dict = {
   nav: {
