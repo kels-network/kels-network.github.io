@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContributorsRouteImport } from './routes/contributors'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ProgramsRoute = ProgramsRouteImport.update({
@@ -29,6 +30,11 @@ const ContributorsRoute = ContributorsRouteImport.update({
   path: '/contributors',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,12 +43,14 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/contributors': typeof ContributorsRoute
   '/events': typeof EventsRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/contributors': typeof ContributorsRoute
   '/events': typeof EventsRoute
   '/programs': typeof ProgramsRoute
@@ -50,20 +58,22 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
   '/contributors': typeof ContributorsRoute
   '/events': typeof EventsRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contributors' | '/events' | '/programs'
+  fullPaths: '/' | '/admin' | '/contributors' | '/events' | '/programs'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contributors' | '/events' | '/programs'
-  id: '__root__' | '/' | '/contributors' | '/events' | '/programs'
+  to: '/' | '/admin' | '/contributors' | '/events' | '/programs'
+  id: '__root__' | '/' | '/admin' | '/contributors' | '/events' | '/programs'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
   ContributorsRoute: typeof ContributorsRoute
   EventsRoute: typeof EventsRoute
   ProgramsRoute: typeof ProgramsRoute
@@ -92,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContributorsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,6 +121,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
   ContributorsRoute: ContributorsRoute,
   EventsRoute: EventsRoute,
   ProgramsRoute: ProgramsRoute,
