@@ -180,27 +180,27 @@
   border-radius: 9999px;
   background: radial-gradient(
     circle at center,
-    color-mix(in oklab, var(--glow) 85%, transparent) 0%,
-    color-mix(in oklab, var(--glow) 35%, transparent) 38%,
+    color-mix(in oklab, var(--glow) 55%, transparent) 0%,
+    color-mix(in oklab, var(--glow) 22%, transparent) 38%,
     transparent 70%
   );
-  filter: blur(40px);
-  opacity: 0.85;
+  filter: blur(56px);
+  opacity: 0.55;
   animation: glow-drift 22s ease-in-out infinite alternate;
 }
 
 @keyframes glow-drift {
   0% {
     transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.8;
+    opacity: 0.5;
   }
   50% {
     transform: translate3d(8vw, 6vw, 0) scale(1.18);
-    opacity: 0.95;
+    opacity: 0.62;
   }
   100% {
     transform: translate3d(2vw, 12vw, 0) scale(1.05);
-    opacity: 0.75;
+    opacity: 0.45;
   }
 }
 
