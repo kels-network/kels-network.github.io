@@ -151,7 +151,7 @@ function EventsPage() {
                 <AccordionItem
                   key={event.id}
                   value={event.id}
-                  className="rounded-2xl border-none bg-card px-6 shadow-sm ring-1 ring-border"
+                  className="rounded-2xl border-none bg-card px-6 shadow-card ring-1 ring-border"
                 >
                   <AccordionTrigger className="py-5 text-left font-display text-base font-bold text-foreground hover:no-underline sm:text-lg">
                     {event.title}
@@ -159,9 +159,9 @@ function EventsPage() {
                   <AccordionContent className="pb-6">
                     <div className="space-y-4">
                       {(event.dateUS || event.location) && (
-                        <div className="flex flex-wrap gap-3">
-                          <DateBlock event={event} />
-                          <LocationBlock event={event} />
+                        <div className="flex flex-wrap gap-x-8 gap-y-3">
+                          <DateBlock event={event} bare />
+                          <LocationBlock event={event} bare />
                         </div>
                       )}
                       {event.description && (
