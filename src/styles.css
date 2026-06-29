@@ -83,10 +83,10 @@
   --accent-foreground: oklch(0.32 0.09 264);
   --destructive: oklch(0.58 0.24 27);
   --destructive-foreground: oklch(0.99 0.003 247);
-  --border: oklch(0.91 0.012 255);
-  --input: oklch(0.91 0.012 255);
+  --border: oklch(0.95 0.006 255);
+  --input: oklch(0.93 0.008 255);
   --ring: oklch(0.32 0.09 264);
-  --glow: oklch(0.92 0.11 95);
+  --glow: oklch(0.94 0.06 95);
   --discord: oklch(0.55 0.18 274);
   --discord-foreground: oklch(0.99 0.003 247);
   --linkedin: oklch(0.52 0.13 248);
