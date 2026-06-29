@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProgramsRouteImport } from './routes/programs'
 import { Route as EventsRouteImport } from './routes/events'
+import { Route as ContributorsRouteImport } from './routes/contributors'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ProgramsRoute = ProgramsRouteImport.update({
@@ -23,6 +24,11 @@ const EventsRoute = EventsRouteImport.update({
   path: '/events',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContributorsRoute = ContributorsRouteImport.update({
+  id: '/contributors',
+  path: '/contributors',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/contributors': typeof ContributorsRoute
   '/events': typeof EventsRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/contributors': typeof ContributorsRoute
   '/events': typeof EventsRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/contributors': typeof ContributorsRoute
   '/events': typeof EventsRoute
   '/programs': typeof ProgramsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/events' | '/programs'
+  fullPaths: '/' | '/contributors' | '/events' | '/programs'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/events' | '/programs'
-  id: '__root__' | '/' | '/events' | '/programs'
+  to: '/' | '/contributors' | '/events' | '/programs'
+  id: '__root__' | '/' | '/contributors' | '/events' | '/programs'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ContributorsRoute: typeof ContributorsRoute
   EventsRoute: typeof EventsRoute
   ProgramsRoute: typeof ProgramsRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contributors': {
+      id: '/contributors'
+      path: '/contributors'
+      fullPath: '/contributors'
+      preLoaderRoute: typeof ContributorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ContributorsRoute: ContributorsRoute,
   EventsRoute: EventsRoute,
   ProgramsRoute: ProgramsRoute,
 }
