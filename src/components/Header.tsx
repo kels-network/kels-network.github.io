@@ -26,7 +26,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-6 md:flex lg:gap-8">
+        <nav className="ml-auto mr-4 hidden items-center gap-6 md:flex lg:mr-8 lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.to}
