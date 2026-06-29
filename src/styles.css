@@ -204,6 +204,13 @@
   }
 }
 
+/* Soft, blurry, light card shadow (reference-inspired) */
+@utility shadow-card {
+  box-shadow:
+    0 24px 56px -28px color-mix(in oklab, var(--foreground) 14%, transparent),
+    0 8px 24px -16px color-mix(in oklab, var(--foreground) 7%, transparent);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .glow-blob {
     animation: none;
