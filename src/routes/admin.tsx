@@ -37,7 +37,7 @@ function MemberCard({
       onClick={onClick}
       className="group flex flex-col items-center text-center"
     >
-      <div className="h-28 w-28 rounded-full bg-muted ring-1 ring-border transition-shadow duration-300 group-hover:shadow-[0_0_32px_2px_var(--glow)] sm:h-32 sm:w-32" />
+      <div className="h-28 w-28 rounded-full bg-muted ring-1 ring-border transition-shadow duration-300 group-hover:shadow-[0_0_18px_0_color-mix(in_oklab,var(--glow)_55%,transparent)] sm:h-32 sm:w-32" />
       <p className="mt-3 font-display text-sm font-bold text-foreground">
         {member.name}
       </p>

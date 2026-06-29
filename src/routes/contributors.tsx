@@ -31,7 +31,7 @@ function ContributorsPage() {
   const { t } = useLanguage();
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <h1 className="text-center font-display text-4xl font-black tracking-tight text-foreground sm:text-6xl">
+      <h1 className="text-center font-display text-4xl font-black tracking-tight text-foreground sm:text-5xl">
         {t.contributors.title}
       </h1>
 
