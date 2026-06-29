@@ -35,9 +35,9 @@ function MemberCard({
     <button
       type="button"
       onClick={onClick}
-      className="group flex flex-col items-center text-center transition-transform hover:-translate-y-1"
+      className="group flex flex-col items-center text-center"
     >
-      <div className="h-28 w-28 rounded-full bg-muted ring-1 ring-border transition-shadow group-hover:shadow-md sm:h-32 sm:w-32" />
+      <div className="h-28 w-28 rounded-full bg-muted ring-1 ring-border transition-shadow duration-300 group-hover:shadow-[0_0_32px_2px_var(--glow)] sm:h-32 sm:w-32" />
       <p className="mt-3 font-display text-sm font-bold text-foreground">
         {member.name}
       </p>

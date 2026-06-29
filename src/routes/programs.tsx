@@ -34,7 +34,7 @@ function ProgramsPage() {
         {programs.map((program) => (
           <article
             key={program.id}
-            className="flex flex-col rounded-3xl bg-card p-7 shadow-sm ring-1 ring-border transition-transform hover:-translate-y-1"
+            className="flex flex-col rounded-3xl bg-card p-7 shadow-card ring-1 ring-border transition-transform hover:-translate-y-1"
           >
             <div className="flex aspect-[4/3] items-center justify-center rounded-xl bg-muted text-sm text-muted-foreground">
               {t.programs.imagePlaceholder}

@@ -38,7 +38,7 @@ function ContributorsPage() {
       <p className="mt-10 font-serif text-lg leading-relaxed text-foreground/90">
         {t.contributors.intro}
       </p>
-      <p className="mt-6 font-serif text-lg italic text-foreground">
+      <p className="mt-6 font-serif text-lg text-foreground">
         {t.contributors.signature}
       </p>
 
@@ -47,7 +47,7 @@ function ContributorsPage() {
           <AccordionItem
             key={section.id}
             value={section.id}
-            className="rounded-3xl border-none bg-card px-7 shadow-sm ring-1 ring-border"
+            className="rounded-3xl border-none bg-card px-7 shadow-card ring-1 ring-border"
           >
             <AccordionTrigger className="py-6 text-left font-display text-xl font-bold text-foreground hover:no-underline">
               {section.title}

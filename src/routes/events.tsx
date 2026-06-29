@@ -28,21 +28,37 @@ export const Route = createFileRoute("/events")({
   component: EventsPage,
 });
 
-function DateBlock({ event }: { event: EventItem }) {
+function DateBlock({ event, bare }: { event: EventItem; bare?: boolean }) {
   if (!event.dateUS && !event.dateKR) return null;
   return (
-    <div className="flex items-center gap-3 rounded-2xl bg-card px-5 py-3.5 shadow-sm ring-1 ring-border">
+    <div
+      className={
+        bare
+          ? "flex items-center gap-3"
+          : "flex items-center gap-3 rounded-2xl bg-card px-5 py-3.5 shadow-card ring-1 ring-border"
+      }
+    >
       <Calendar className="h-6 w-6 shrink-0 text-foreground" />
       <div className="space-y-0.5 text-sm font-medium text-foreground">
         {event.dateUS && (
-          <p>
-            <span className="mr-1.5">🇺🇸</span>
+          <p className="flex items-center">
+            <img
+              src="https://flagcdn.com/w40/us.png"
+              alt="United States"
+              className="mr-1.5 h-3.5 w-auto rounded-[2px]"
+              loading="lazy"
+            />
             {event.dateUS}
           </p>
         )}
         {event.dateKR && (
-          <p>
-            <span className="mr-1.5">🇰🇷</span>
+          <p className="flex items-center">
+            <img
+              src="https://flagcdn.com/w40/kr.png"
+              alt="Korea"
+              className="mr-1.5 h-3.5 w-auto rounded-[2px]"
+              loading="lazy"
+            />
             {event.dateKR}
           </p>
         )}
@@ -51,10 +67,16 @@ function DateBlock({ event }: { event: EventItem }) {
   );
 }
 
-function LocationBlock({ event }: { event: EventItem }) {
+function LocationBlock({ event, bare }: { event: EventItem; bare?: boolean }) {
   if (!event.location) return null;
   return (
-    <div className="flex items-center gap-3 rounded-2xl bg-card px-5 py-3.5 shadow-sm ring-1 ring-border">
+    <div
+      className={
+        bare
+          ? "flex items-center gap-3"
+          : "flex items-center gap-3 rounded-2xl bg-card px-5 py-3.5 shadow-card ring-1 ring-border"
+      }
+    >
       <MapPin className="h-6 w-6 shrink-0 text-foreground" />
       <div className="text-sm">
         {event.locationLabel && (
@@ -129,7 +151,7 @@ function EventsPage() {
                 <AccordionItem
                   key={event.id}
                   value={event.id}
-                  className="rounded-2xl border-none bg-card px-6 shadow-sm ring-1 ring-border"
+                  className="rounded-2xl border-none bg-card px-6 shadow-card ring-1 ring-border"
                 >
                   <AccordionTrigger className="py-5 text-left font-display text-base font-bold text-foreground hover:no-underline sm:text-lg">
                     {event.title}
@@ -137,9 +159,9 @@ function EventsPage() {
                   <AccordionContent className="pb-6">
                     <div className="space-y-4">
                       {(event.dateUS || event.location) && (
-                        <div className="flex flex-wrap gap-3">
-                          <DateBlock event={event} />
-                          <LocationBlock event={event} />
+                        <div className="flex flex-wrap gap-x-8 gap-y-3">
+                          <DateBlock event={event} bare />
+                          <LocationBlock event={event} bare />
                         </div>
                       )}
                       {event.description && (
