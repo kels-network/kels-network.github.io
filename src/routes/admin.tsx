@@ -85,18 +85,18 @@ function BoardPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <h1 className="text-center font-display text-4xl font-black tracking-tight text-foreground sm:text-5xl">
+      <h1 className="text-center font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
         {t.board.title}
       </h1>
 
-      <h2 className="mt-10 font-display text-xl font-bold text-foreground">
+      <h2 className="mt-10 font-display text-xl font-semibold text-foreground">
         {t.board.year}
       </h2>
 
       <div className="mt-8 space-y-14">
         {boardGroups.map((group) => (
           <section key={group.id}>
-            <h3 className="font-display text-lg font-bold text-foreground">
+            <h3 className="font-display text-lg font-semibold text-foreground">
               {group.role}
             </h3>
             <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-4">
