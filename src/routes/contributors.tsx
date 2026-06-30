@@ -35,10 +35,10 @@ function ContributorsPage() {
         {t.contributors.title}
       </h1>
 
-      <p className="mt-10 text-justify font-serif text-lg leading-relaxed text-foreground/90">
+      <p className="mt-10 text-justify text-lg leading-normal text-foreground/90">
         {t.contributors.intro}
       </p>
-      <p className="mt-6 font-serif text-lg text-foreground">
+      <p className="mt-6 text-lg text-foreground">
         {t.contributors.signature}
       </p>
 
