@@ -13,15 +13,13 @@ export const upcomingEvents: EventItem[] = [
   {
     id: "upcoming-1",
     title:
-      "Design Methodologies: Design-Based Research & Human-Centered Design",
-    dateUS: "NOV 4, 2024 (7PM EST)",
-    dateKR: "NOV 3, 2024 (8AM KST)",
+      "Conference Debrief Session (ISLS 2026 · ICOLSEI · Festival of Learning)",
+    dateUS: "JUL 10 (8PM EST)",
+    dateKR: "JUL 11, 2026 (9AM KST)",
     location: "ZOOM",
     locationLabel: "Online",
     speakers: [
-      "Dr. Jewoong Moon (Assistant Professor, University of Alabama)",
-      "Dr. Jewoong Moon (Assistant Professor, University of Alabama)",
-    ],
+      "KELS Speaker Series Committee"],
   },
 ];
 
