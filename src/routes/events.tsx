@@ -92,7 +92,7 @@ function Speakers({ event }: { event: EventItem }) {
   const { t } = useLanguage();
   return (
     <div>
-      <p className="font-display font-bold text-foreground">{t.events.speakers}</p>
+      <p className="font-display font-semibold text-foreground">{t.events.speakers}</p>
       <div className="mt-1 space-y-0.5 text-sm text-foreground/90">
         {event.speakers.map((s, i) => (
           <p key={i}>{s}</p>
