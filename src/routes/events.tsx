@@ -28,6 +28,31 @@ export const Route = createFileRoute("/events")({
   component: EventsPage,
 });
 
+function Poster({
+  event,
+  placeholder,
+}: {
+  event: EventItem;
+  placeholder?: string;
+}) {
+  if (event.poster) {
+    return (
+      <img
+        src={event.poster}
+        alt={event.title}
+        loading="lazy"
+        className="aspect-[3/4] w-full max-w-[220px] shrink-0 rounded-xl object-cover ring-1 ring-border"
+      />
+    );
+  }
+  if (!placeholder) return null;
+  return (
+    <div className="flex aspect-[3/4] w-full max-w-[220px] shrink-0 items-center justify-center rounded-xl bg-muted text-center text-sm text-muted-foreground">
+      {placeholder}
+    </div>
+  );
+}
+
 function DateBlock({ event, bare }: { event: EventItem; bare?: boolean }) {
   if (!event.dateUS && !event.dateKR) return null;
   return (
@@ -118,9 +143,7 @@ function EventsPage() {
       </h2>
       {upcoming && (
         <div className="mt-6 flex flex-col gap-6 sm:flex-row">
-          <div className="flex aspect-[3/4] w-full max-w-[220px] shrink-0 items-center justify-center rounded-xl bg-muted text-center text-sm text-muted-foreground">
-            {t.events.posterPlaceholder}
-          </div>
+          <Poster event={upcoming} placeholder={t.events.posterPlaceholder} />
           <div className="flex-1">
             <h3 className="font-display text-xl font-semibold leading-snug text-foreground">
               {upcoming.title}
@@ -157,19 +180,24 @@ function EventsPage() {
                     {event.title}
                   </AccordionTrigger>
                   <AccordionContent className="pb-6">
-                    <div className="space-y-4">
-                      {(event.dateUS || event.location) && (
-                        <div className="flex flex-wrap gap-x-8 gap-y-3">
-                          <DateBlock event={event} bare />
-                          <LocationBlock event={event} bare />
-                        </div>
+                    <div className="flex flex-col gap-6 sm:flex-row">
+                      {event.poster && (
+                        <Poster event={event} />
                       )}
-                      {event.description && (
-                        <p className="text-justify text-sm leading-relaxed text-foreground/90">
-                          {event.description}
-                        </p>
-                      )}
-                      <Speakers event={event} />
+                      <div className="flex-1 space-y-4">
+                        {(event.dateUS || event.location) && (
+                          <div className="flex flex-wrap gap-x-8 gap-y-3">
+                            <DateBlock event={event} bare />
+                            <LocationBlock event={event} bare />
+                          </div>
+                        )}
+                        {event.description && (
+                          <p className="text-justify text-sm leading-relaxed text-foreground/90">
+                            {event.description}
+                          </p>
+                        )}
+                        <Speakers event={event} />
+                      </div>
                     </div>
                   </AccordionContent>
                 </AccordionItem>

@@ -1,6 +1,8 @@
 export type EventItem = {
   id: string;
   title: string;
+  /** Path to the event poster image (e.g. "/events/2025-dbr.jpg"). */
+  poster?: string;
   dateUS?: string;
   dateKR?: string;
   location?: string;
