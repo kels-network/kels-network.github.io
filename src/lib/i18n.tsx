@@ -5,6 +5,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
+import { siteYear } from "../data/siteConfig";
 
 export type Lang = "en" | "ko";
 
@@ -21,8 +22,8 @@ const en = {
     toggleTheme: "Toggle dark mode",
   },
   footer: {
-    board: "2026 KELS Board",
-    rights: "© 2026. All rights reserved.",
+    board: `${siteYear} KELS Board`,
+    rights: `© ${siteYear}. All rights reserved.`,
   },
   home: {
     headline: "Korean Edutech &\nLearning Sciences Researcher Network",
@@ -52,7 +53,7 @@ const en = {
   },
   board: {
     title: "Board Members",
-    year: "2026 Board Members",
+    year: `${siteYear} Board Members`,
     close: "Close",
   },
 };
@@ -68,8 +69,8 @@ const ko: Dict = {
     toggleTheme: "다크 모드 전환",
   },
   footer: {
-    board: "2026 KELS 운영위원회",
-    rights: "© 2026. All rights reserved.",
+    board: `${siteYear} KELS 운영위원회`,
+    rights: `© ${siteYear}. All rights reserved.`,
   },
   home: {
     headline: "한국 에듀테크 & 학습과학 연구자 네트워크",
@@ -99,7 +100,7 @@ const ko: Dict = {
   },
   board: {
     title: "운영진",
-    year: "2026 운영위원회",
+    year: `${siteYear} 운영위원회`,
     close: "닫기",
   },
 };
