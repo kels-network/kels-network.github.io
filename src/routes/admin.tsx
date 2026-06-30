@@ -37,7 +37,16 @@ function MemberCard({
       onClick={onClick}
       className="group flex flex-col items-center text-center"
     >
-      <div className="h-28 w-28 rounded-full bg-muted ring-1 ring-border transition-shadow duration-300 group-hover:shadow-[0_0_18px_0_color-mix(in_oklab,var(--glow)_55%,transparent)] sm:h-32 sm:w-32" />
+      <div className="h-28 w-28 overflow-hidden rounded-full bg-muted ring-1 ring-border transition-shadow duration-300 group-hover:shadow-[0_0_18px_0_color-mix(in_oklab,var(--glow)_55%,transparent)] sm:h-32 sm:w-32">
+        {member.image && (
+          <img
+            src={member.image}
+            alt={member.name}
+            loading="lazy"
+            className="h-full w-full object-cover"
+          />
+        )}
+      </div>
       <p className="mt-3 font-display text-sm font-bold text-foreground">
         {member.name}
       </p>
@@ -123,7 +132,15 @@ function BoardPage() {
           {selected && (
             <div>
               <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
-                <div className="h-40 w-40 shrink-0 self-center rounded-full bg-muted ring-1 ring-border sm:self-start" />
+                <div className="h-40 w-40 shrink-0 self-center overflow-hidden rounded-full bg-muted ring-1 ring-border sm:self-start">
+                  {selected.image && (
+                    <img
+                      src={selected.image}
+                      alt={selected.name}
+                      className="h-full w-full object-cover"
+                    />
+                  )}
+                </div>
                 <div className="flex-1">
                   <h3 className="font-display text-2xl font-bold text-foreground">
                     {selected.name}
