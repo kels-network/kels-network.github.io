@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useLanguage } from "../lib/i18n";
 import { DiscordIcon } from "../components/Footer";
+import { socialLinks } from "../data/siteConfig";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,7 +44,7 @@ function Index() {
 
       <div className="mt-12">
         <a
-          href="#"
+          href={socialLinks.discord}
           className="inline-flex items-center gap-2.5 rounded-full bg-discord px-6 py-3.5 text-base font-semibold text-discord-foreground shadow-sm transition-transform hover:scale-105"
         >
           <DiscordIcon className="h-5 w-5" />

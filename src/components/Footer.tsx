@@ -1,5 +1,6 @@
 import { Linkedin } from "lucide-react";
 import { useLanguage } from "../lib/i18n";
+import { socialLinks } from "../data/siteConfig";
 
 function DiscordIcon({ className }: { className?: string }) {
   return (
@@ -20,14 +21,14 @@ export function Footer() {
         </div>
         <div className="flex items-center gap-3">
           <a
-            href="#"
+            href={socialLinks.linkedin}
             aria-label="LinkedIn"
             className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-linkedin text-white transition-transform hover:scale-105"
           >
             <Linkedin className="h-5 w-5" />
           </a>
           <a
-            href="#"
+            href={socialLinks.discord}
             aria-label="Discord"
             className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-discord text-discord-foreground transition-transform hover:scale-105"
           >
