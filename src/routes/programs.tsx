@@ -26,7 +26,7 @@ function ProgramsPage() {
   const { t } = useLanguage();
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <h1 className="text-center font-display text-4xl font-black tracking-tight text-foreground sm:text-5xl">
+      <h1 className="text-center font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
         {t.programs.title}
       </h1>
 
@@ -36,13 +36,13 @@ function ProgramsPage() {
             key={program.id}
             className="flex flex-col rounded-3xl bg-card p-7 shadow-card ring-1 ring-border transition-transform hover:-translate-y-1"
           >
-            <div className="flex aspect-[4/3] items-center justify-center rounded-xl bg-muted text-sm text-muted-foreground">
+            <div className="flex aspect-[16/9] items-center justify-center rounded-xl bg-muted text-sm text-muted-foreground">
               {t.programs.imagePlaceholder}
             </div>
-            <h2 className="mt-6 font-display text-2xl font-bold leading-tight text-foreground">
+            <h2 className="mt-6 font-display text-2xl font-semibold leading-tight text-foreground">
               {program.title}
             </h2>
-            <p className="mt-4 text-foreground/90">{program.description}</p>
+            <p className="mt-4 text-justify text-foreground/90">{program.description}</p>
             <ul className="mt-4 space-y-1.5 text-foreground/90">
               {program.items.map((item) => (
                 <li key={item} className="flex gap-2">

@@ -45,7 +45,7 @@ function DateBlock({ event, bare }: { event: EventItem; bare?: boolean }) {
             <img
               src="https://flagcdn.com/w40/us.png"
               alt="United States"
-              className="mr-1.5 h-3.5 w-auto rounded-[2px]"
+              className="mr-2 h-auto w-5 shrink-0 rounded-[2px]"
               loading="lazy"
             />
             {event.dateUS}
@@ -56,7 +56,7 @@ function DateBlock({ event, bare }: { event: EventItem; bare?: boolean }) {
             <img
               src="https://flagcdn.com/w40/kr.png"
               alt="Korea"
-              className="mr-1.5 h-3.5 w-auto rounded-[2px]"
+              className="mr-2 h-auto w-5 shrink-0 rounded-[2px]"
               loading="lazy"
             />
             {event.dateKR}
@@ -92,7 +92,7 @@ function Speakers({ event }: { event: EventItem }) {
   const { t } = useLanguage();
   return (
     <div>
-      <p className="font-display font-bold text-foreground">{t.events.speakers}</p>
+      <p className="font-display font-semibold text-foreground">{t.events.speakers}</p>
       <div className="mt-1 space-y-0.5 text-sm text-foreground/90">
         {event.speakers.map((s, i) => (
           <p key={i}>{s}</p>
@@ -108,12 +108,12 @@ function EventsPage() {
 
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <h1 className="text-center font-display text-4xl font-black tracking-tight text-foreground sm:text-5xl">
+      <h1 className="text-center font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
         {t.events.title}
       </h1>
 
       {/* Upcoming */}
-      <h2 className="mt-12 font-display text-2xl font-bold text-foreground">
+      <h2 className="mt-12 font-display text-2xl font-semibold text-foreground">
         {t.events.upcoming}
       </h2>
       {upcoming && (
@@ -122,7 +122,7 @@ function EventsPage() {
             {t.events.posterPlaceholder}
           </div>
           <div className="flex-1">
-            <h3 className="font-display text-xl font-bold leading-snug text-foreground">
+            <h3 className="font-display text-xl font-semibold leading-snug text-foreground">
               {upcoming.title}
             </h3>
             <div className="mt-4 flex flex-wrap gap-3">
@@ -137,13 +137,13 @@ function EventsPage() {
       )}
 
       {/* Past */}
-      <h2 className="mt-16 font-display text-2xl font-bold text-foreground">
+      <h2 className="mt-16 font-display text-2xl font-semibold text-foreground">
         {t.events.past}
       </h2>
       <div className="mt-6 space-y-10">
         {pastEvents.map((group) => (
           <div key={group.year}>
-            <h3 className="font-display text-xl font-bold text-foreground">
+            <h3 className="font-display text-xl font-semibold text-foreground">
               {group.year}
             </h3>
             <Accordion type="multiple" className="mt-4 space-y-4">
@@ -153,7 +153,7 @@ function EventsPage() {
                   value={event.id}
                   className="rounded-2xl border-none bg-card px-6 shadow-card ring-1 ring-border"
                 >
-                  <AccordionTrigger className="py-5 text-left font-display text-base font-bold text-foreground hover:no-underline sm:text-lg">
+                  <AccordionTrigger className="py-5 text-left font-display text-base font-semibold text-foreground hover:no-underline sm:text-lg">
                     {event.title}
                   </AccordionTrigger>
                   <AccordionContent className="pb-6">
@@ -165,7 +165,7 @@ function EventsPage() {
                         </div>
                       )}
                       {event.description && (
-                        <p className="text-sm leading-relaxed text-foreground/90">
+                        <p className="text-justify text-sm leading-relaxed text-foreground/90">
                           {event.description}
                         </p>
                       )}
