@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
-import { FlaskConical, Linkedin, Globe, GraduationCap } from "lucide-react";
-import { Dialog, DialogContent } from "../components/ui/dialog";
+import { FlaskConical, Linkedin, Globe, GraduationCap, X } from "lucide-react";
 import { useLanguage } from "../lib/i18n";
 import { boardGroups, type BoardMember } from "../data/board";
 
@@ -98,6 +97,20 @@ function BoardPage() {
   const { t } = useLanguage();
   const [selected, setSelected] = useState<BoardMember | null>(null);
 
+  useEffect(() => {
+    if (!selected) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelected(null);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [selected]);
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
       <h1 className="text-center font-display text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
@@ -127,9 +140,26 @@ function BoardPage() {
         ))}
       </div>
 
-      <Dialog open={!!selected} onOpenChange={(o) => !o && setSelected(null)}>
-        <DialogContent className="max-w-2xl rounded-3xl">
-          {selected && (
+      {selected && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={selected.name}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+        >
+          <div
+            className="absolute inset-0 bg-black/80"
+            onClick={() => setSelected(null)}
+          />
+          <div className="relative z-10 max-h-[90vh] w-full max-w-2xl overflow-y-auto rounded-3xl bg-background p-6 shadow-lg ring-1 ring-border">
+            <button
+              type="button"
+              onClick={() => setSelected(null)}
+              aria-label="Close"
+              className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+            >
+              <X className="h-5 w-5" />
+            </button>
             <div>
               <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
                 <div className="h-40 w-40 shrink-0 self-center overflow-hidden rounded-full bg-muted ring-1 ring-border sm:self-start">
@@ -161,9 +191,9 @@ function BoardPage() {
                 </>
               )}
             </div>
-          )}
-        </DialogContent>
-      </Dialog>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
