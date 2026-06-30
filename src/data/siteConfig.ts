@@ -8,8 +8,8 @@
 // 1. 소셜 링크 (푸터 아이콘 & 홈 Discord 버튼)
 // ─────────────────────────────────────────
 export const socialLinks = {
-  discord: "https://discord.gg/your-invite-code",
-  linkedin: "https://www.linkedin.com/company/kels-network",
+  discord: "https://discord.gg/MRYGmWnnHV",
+  linkedin: "https://www.linkedin.com/company/korean-edutech-learningsciences-researcher-network-kels",
 } as const;
 
 // ─────────────────────────────────────────
