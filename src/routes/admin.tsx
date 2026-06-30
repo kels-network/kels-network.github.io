@@ -43,6 +43,11 @@ function MemberCard({
       </p>
       <p className="text-xs text-muted-foreground">{member.title}</p>
       <p className="text-xs text-muted-foreground">{member.affiliation}</p>
+      {member.links && Object.values(member.links).some(Boolean) && (
+        <div className="mt-2">
+          <MemberLinks member={member} />
+        </div>
+      )}
     </button>
   );
 }
@@ -70,6 +75,7 @@ function MemberLinks({ member }: { member: BoardMember }) {
           href={href}
           aria-label={label}
           title={label}
+          onClick={(e) => e.stopPropagation()}
           className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-muted text-foreground transition-colors hover:bg-accent"
         >
           <Icon className="h-4 w-4" />
@@ -89,7 +95,7 @@ function BoardPage() {
         {t.board.title}
       </h1>
 
-      <h2 className="mt-10 font-display text-xl font-semibold text-foreground">
+      <h2 className="mt-10 font-display text-2xl font-semibold text-foreground">
         {t.board.year}
       </h2>
 
