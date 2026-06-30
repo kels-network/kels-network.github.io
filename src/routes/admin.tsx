@@ -43,6 +43,11 @@ function MemberCard({
       </p>
       <p className="text-xs text-muted-foreground">{member.title}</p>
       <p className="text-xs text-muted-foreground">{member.affiliation}</p>
+      {member.links && Object.values(member.links).some(Boolean) && (
+        <div className="mt-2">
+          <MemberLinks member={member} />
+        </div>
+      )}
     </button>
   );
 }
