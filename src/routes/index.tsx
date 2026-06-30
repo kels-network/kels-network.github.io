@@ -37,7 +37,7 @@ function Index() {
         {t.home.welcome}
       </p>
 
-      <p className="mt-6 max-w-3xl text-justify text-lg leading-relaxed text-foreground/90">
+      <p className="mt-6 max-w-3xl text-left text-lg leading-relaxed text-foreground/90">
         {t.home.intro}
       </p>
 
