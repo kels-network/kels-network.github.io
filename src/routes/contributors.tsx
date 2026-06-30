@@ -31,11 +31,11 @@ function ContributorsPage() {
   const { t } = useLanguage();
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <h1 className="text-center font-display text-4xl font-black tracking-tight text-foreground sm:text-5xl">
+      <h1 className="text-center font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
         {t.contributors.title}
       </h1>
 
-      <p className="mt-10 font-serif text-lg leading-relaxed text-foreground/90">
+      <p className="mt-10 text-justify font-serif text-lg leading-relaxed text-foreground/90">
         {t.contributors.intro}
       </p>
       <p className="mt-6 font-serif text-lg text-foreground">
@@ -49,7 +49,7 @@ function ContributorsPage() {
             value={section.id}
             className="rounded-3xl border-none bg-card px-7 shadow-card ring-1 ring-border"
           >
-            <AccordionTrigger className="py-6 text-left font-display text-xl font-bold text-foreground hover:no-underline">
+            <AccordionTrigger className="py-6 text-left font-display text-xl font-semibold text-foreground hover:no-underline">
               {section.title}
             </AccordionTrigger>
             <AccordionContent className="pb-7">
