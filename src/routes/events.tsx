@@ -45,7 +45,7 @@ function DateBlock({ event, bare }: { event: EventItem; bare?: boolean }) {
             <img
               src="https://flagcdn.com/w40/us.png"
               alt="United States"
-              className="mr-1.5 h-3.5 w-auto rounded-[2px]"
+              className="mr-2 h-auto w-5 shrink-0 rounded-[2px]"
               loading="lazy"
             />
             {event.dateUS}
@@ -56,7 +56,7 @@ function DateBlock({ event, bare }: { event: EventItem; bare?: boolean }) {
             <img
               src="https://flagcdn.com/w40/kr.png"
               alt="Korea"
-              className="mr-1.5 h-3.5 w-auto rounded-[2px]"
+              className="mr-2 h-auto w-5 shrink-0 rounded-[2px]"
               loading="lazy"
             />
             {event.dateKR}
