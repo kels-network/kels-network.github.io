@@ -25,7 +25,7 @@ const en = {
     rights: "© 2026. All rights reserved.",
   },
   home: {
-    headline: "Korean Edutech & Learning Sciences Researcher Network",
+    headline: "Korean Edutech &\nLearning Sciences Researcher Network",
     welcome: "Welcome Aboard!",
     intro:
       "KELS (Korean Edutech/Learning Sciences Researcher Network) is a research network where researchers in Korea in the fields of Educational Technology and Learning Sciences freely communicate and collaborate. We pursue cooperation rather than competition, and diversity rather than hierarchy and uniformity.",

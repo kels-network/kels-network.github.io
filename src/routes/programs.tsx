@@ -26,7 +26,7 @@ function ProgramsPage() {
   const { t } = useLanguage();
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-      <h1 className="text-center font-display text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+      <h1 className="text-center font-display text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
         {t.programs.title}
       </h1>
 
