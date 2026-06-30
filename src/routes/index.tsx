@@ -29,7 +29,7 @@ function Index() {
   const { t } = useLanguage();
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <h1 className="max-w-4xl font-display text-5xl font-black leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
+      <h1 className="max-w-4xl font-display text-5xl font-bold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
         {t.home.headline}
       </h1>
 
@@ -37,7 +37,7 @@ function Index() {
         {t.home.welcome}
       </p>
 
-      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-foreground/90">
+      <p className="mt-6 max-w-3xl text-justify text-lg leading-relaxed text-foreground/90">
         {t.home.intro}
       </p>
 
