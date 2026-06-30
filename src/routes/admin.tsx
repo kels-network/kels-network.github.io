@@ -70,6 +70,7 @@ function MemberLinks({ member }: { member: BoardMember }) {
           href={href}
           aria-label={label}
           title={label}
+          onClick={(e) => e.stopPropagation()}
           className="inline-flex h-9 w-9 items-center justify-center rounded-md bg-muted text-foreground transition-colors hover:bg-accent"
         >
           <Icon className="h-4 w-4" />
