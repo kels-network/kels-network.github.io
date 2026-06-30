@@ -95,7 +95,7 @@ function BoardPage() {
         {t.board.title}
       </h1>
 
-      <h2 className="mt-10 font-display text-xl font-semibold text-foreground">
+      <h2 className="mt-10 font-display text-2xl font-semibold text-foreground">
         {t.board.year}
       </h2>
 
